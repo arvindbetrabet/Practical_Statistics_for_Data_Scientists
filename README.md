@@ -1,5 +1,5 @@
 # Practical_Statistics_for_Data_Scientists
-This repository has the Python equivalent R-code for the book  Practical Statistics for Data Scientists: 50 Essential Concepts, by Peter Bruce and Andrew Bruce. This 1st edition book, by O'reilly Media, is a compact reference that explains 50 of the main concepts, that every aspiring Data Scientists should know.
+This repository has the Python equivalent of the R-code for the book  Practical Statistics for Data Scientists: 50 Essential Concepts, by Peter Bruce and Andrew Bruce. This 1st edition book, by O'reilly Media, is a compact reference that explains 50 of the main concepts, that every aspiring Data Scientists should know.
 
 The authors have provided curated data that is used in their R code to illustrate the 50 concepts.
 

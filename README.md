@@ -5,7 +5,7 @@ The authors have provided curated data that is used in their R code to illustrat
 
 Download R-code from: https://github.com/andrewgbruce/statistics-for-data-scientists
 
-Download data from (data has been provided in this repository): 
+Download data from (data has been provided in this repository too, for completedness): 
 
 Google Drive - https://drive.google.com/drive/folders/0B98qpkK5EJemYnJ1ajA1ZVJwMzg
 

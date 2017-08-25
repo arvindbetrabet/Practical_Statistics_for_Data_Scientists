@@ -11,7 +11,7 @@
 # Data that is used in the book, has been curated by the authors and made available on <a href="https://drive.google.com/drive/folders/0B98qpkK5EJemYnJ1ajA1ZVJwMzg">Google Drive</a> and <a href="https://www.dropbox.com/sh/clb5aiswr7ar0ci/AABBNwTcTNey2ipoSw_kH5gra?dl=0">Dropbox</a>
 # 
 
-# In[2]:
+# In[1]:
 
 import numpy as np
 import pandas as pd
@@ -19,10 +19,8 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 
-from scipy.stats import trim_mean
 
-
-# In[3]:
+# In[2]:
 
 # Read the data from a .csv file
 airlineDelaysDF = pd.read_csv("../data/dfw_airline.csv")
@@ -42,30 +40,30 @@ airlineDelaysDF = pd.read_csv("../data/dfw_airline.csv")
 
 # ### BarPlot - Categorical Variables
 
-# In[4]:
+# In[3]:
 
 airlineDelaysDF.head(10)
 
 
-# In[5]:
+# In[4]:
 
 headerList = []
 headerList = list(airlineDelaysDF)
 
 
-# In[6]:
+# In[5]:
 
 flightDelays =[]
 flightDelays = airlineDelaysDF.values.tolist()[0]
 
 
-# In[7]:
+# In[6]:
 
 myScale = 6 #change the scale of the flight delays
 scaledFlightDelay = [i/myScale for i in flightDelays]
 
 
-# In[10]:
+# In[7]:
 
 y_pos = np.arange(len(headerList))
 

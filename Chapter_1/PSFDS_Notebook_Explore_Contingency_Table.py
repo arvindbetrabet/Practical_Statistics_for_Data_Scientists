@@ -12,16 +12,17 @@
 # 
 # <b>NOTE:</b>
 # The data for creating the Contingency Table has been downloaded from the Lending Club <a href=" https://www.lendingclub.com/info/download-data.action">website</a> for the year 2007-2011. Please see the screenshot
-# <img src="../img/lending_club.png" height=200, width=400></img>
+# 
+# <img src="../img/lending_club.png" style="width:400px; height: 400px;"></img>
 # 
 
-# In[62]:
+# In[2]:
 
 import numpy as np
 import pandas as pd
 
 
-# In[63]:
+# In[3]:
 
 # Read the data from a .csv file
 # This file is a modified version of the original
@@ -32,25 +33,25 @@ loanDataDF = pd.read_csv("../data/lc_Stats_2007_2011.csv")
 
 
 
-# In[64]:
+# In[4]:
 
 # Check the type of data structure, holding the data
 type(loanDataDF)
 
 
-# In[65]:
+# In[5]:
 
 # Top 10 rows/records of the data
 loanDataDF.head(10)
 
 
-# In[66]:
+# In[6]:
 
 # Bottom 10 rows/records of the data
 loanDataDF.tail(10)
 
 
-# In[67]:
+# In[7]:
 
 # Get the data types of feature/attributes in the data
 loanDataDF.dtypes
@@ -62,12 +63,12 @@ loanDataDF.dtypes
 
 # ### Contingency Table
 
-# In[70]:
+# In[8]:
 
 loanDataCrossTab = pd.crosstab(loanDataDF['grade'], loanDataDF['loan_status'], margins=True)
 
 
-# In[71]:
+# In[9]:
 
 print(loanDataCrossTab)
 

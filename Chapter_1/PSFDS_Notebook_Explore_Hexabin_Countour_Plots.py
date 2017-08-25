@@ -27,7 +27,11 @@ from scipy.stats import kendalltau
 kingCountyTaxDF = pd.read_csv("../data/kc_tax.csv")
 
 
-# ### Two Numerical Variables - Hexabin Plot
+# ## Two Numerical Variables
+# 
+# The authours' opinion is that Scatterplots are good for visualizing a small dataset, but will be too crowded for a large dataset and have suggested Hexabin and Contour plots as alternatives. 
+
+# ### Hexabin Plot
 
 # In[21]:
 

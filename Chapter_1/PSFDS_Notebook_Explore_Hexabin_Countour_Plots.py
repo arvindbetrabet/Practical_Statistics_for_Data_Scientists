@@ -11,7 +11,8 @@
 # Data that is used in the book, has been curated by the authors and made available on <a href="https://drive.google.com/drive/folders/0B98qpkK5EJemYnJ1ajA1ZVJwMzg">Google Drive</a> and <a href="https://www.dropbox.com/sh/clb5aiswr7ar0ci/AABBNwTcTNey2ipoSw_kH5gra?dl=0">Dropbox</a>
 # 
 
-# In[19]:
+# In[1]:
+
 
 import numpy as np
 import pandas as pd
@@ -21,7 +22,8 @@ import matplotlib.pyplot as plt
 from scipy.stats import kendalltau
 
 
-# In[20]:
+# In[2]:
+
 
 # Read the data from a .csv file
 kingCountyTaxDF = pd.read_csv("../data/kc_tax.csv")
@@ -33,51 +35,59 @@ kingCountyTaxDF = pd.read_csv("../data/kc_tax.csv")
 
 # ### Hexabin Plot
 
-# In[21]:
+# In[3]:
+
 
 kingCountyTaxDF.head(10)
 
 
-# In[22]:
+# In[4]:
+
 
 kingCountyTaxDF.describe(include = 'all')
 
 
-# In[23]:
+# In[5]:
+
 
 # Take a subset of the King County, Washington
 # Tax data, for Assessed Value for Tax purposes
-# < $750,000 and Total Living Sq. Feet > 100 &
-# < 3500
+# < $600,000 and Total Living Sq. Feet > 100 &
+# < 2000
 
 kingCountyTaxSubsetDF = kingCountyTaxDF.loc[(kingCountyTaxDF['TaxAssessedValue'] < 600000) & 
                                             (kingCountyTaxDF['SqFtTotLiving'] > 100) & 
                                             (kingCountyTaxDF['SqFtTotLiving'] < 2000)]
 
 
-# In[24]:
+# In[6]:
+
 
 kingCountyTaxSubsetDF.head(10)
 
 
-# In[25]:
+# In[7]:
+
 
 kingCountyTaxSubsetDF.describe(include = 'all')
 
 
-# In[26]:
+# In[8]:
+
 
 # The ZipCode column in the Data Frame
 # has a few Null values
 kingCountyTaxSubsetDF.info()
 
 
-# In[27]:
+# In[9]:
+
 
 kingCountyTaxSubsetDF['TaxAssessedValue'].isnull().values.any()
 
 
-# In[28]:
+# In[10]:
+
 
 
 sns.set(style="ticks")
@@ -90,37 +100,27 @@ y = kingCountyTaxSubsetDF['TaxAssessedValue']
 fig = sns.jointplot(x, y, kind="hex", stat_func=kendalltau, 
                     color="#4CB391")
 
+fig.fig.subplots_adjust(top=0.85)
+
 fig.set_axis_labels('Total Sq.Ft of Living Space', 'Assessed Value for Tax Purposes')
 
-
-# In[29]:
-
-
-plt.subplots_adjust(top=0.85)
-
-plt.suptitle('Tax Assessed vs. Total Living Space', size=18)
-plt.show()
+fig.fig.suptitle('Tax Assessed vs. Total Living Space', size=18);
 
 
 # <br>
 
 # ### Contour Plot
 
-# In[35]:
+# In[11]:
+
 
 fig2 = sns.kdeplot(x, y, legend=True)
 
-
-# In[36]:
-
-plt.subplots_adjust(top=0.85)
-
-plt.suptitle('Tax Assessed vs. Total Living Space', size=18)
-
 plt.xlabel('Total Sq.Ft of Living Space')
+
 plt.ylabel('Assessed Value for Tax Purposes')
 
-plt.show()
+fig2.figure.suptitle('Tax Assessed vs. Total Living Space', size=18);
 
 
 # NOTE: The Contour Plot takes a bit longer to be generated (on a laptop). The lighter greens are the peaks.

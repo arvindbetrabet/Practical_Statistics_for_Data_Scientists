@@ -120,7 +120,58 @@ plt.xlabel('Total Sq.Ft of Living Space')
 
 plt.ylabel('Assessed Value for Tax Purposes')
 
-fig2.figure.suptitle('Tax Assessed vs. Total Living Space', size=18);
+fig2.figure.suptitle('Tax Assessed vs. Total Living Space', size=16);
 
 
 # NOTE: The Contour Plot takes a bit longer to be generated (on a laptop). The lighter greens are the peaks.
+
+# ### Heat Maps
+# 
+# Heat Map, a 2-D representation of data, where values are expressed with colors and serves as a summary of the data. 
+
+# In[12]:
+
+
+# Read the data from a .csv file
+sp500pxDF = pd.read_csv("../data/sp500_px.csv")
+
+
+# In[13]:
+
+
+sp500pxDF.head()
+
+
+# In[14]:
+
+
+sp500pxDF.shape
+
+
+# Using a smaller subset of the larger data frame to use as an example while plotting a Heat Map.
+
+# In[15]:
+
+
+sp500pxDF_subset = sp500pxDF.iloc[0:15, 6:10]
+
+
+# In[16]:
+
+
+sp500pxDF_subset.shape
+
+
+# In[17]:
+
+
+ax = sns.heatmap(sp500pxDF_subset)
+
+
+# Change color and add annotation.
+
+# In[18]:
+
+
+ax = sns.heatmap(sp500pxDF_subset, cmap='YlGnBu', annot=True)
+

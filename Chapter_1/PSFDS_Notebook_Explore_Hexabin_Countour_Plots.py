@@ -153,7 +153,7 @@ sp500pxDF.shape
 # In[15]:
 
 
-sp500pxDF_subset = sp500pxDF.iloc[0:15, 6:10]
+sp500pxDF_subset = sp500pxDF.iloc[0:15, 6:10] # first 15 rows and columns 6, 7 8 and 9 (CSC, EMC, IBM and XRX)
 
 
 # In[16]:
